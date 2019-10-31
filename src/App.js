@@ -2,7 +2,6 @@ import React from "react";
 import TodoList from "../src/components/TodoComponents/TodoList";
 import TodoForm from "../src/components/TodoComponents/TodoForm";
 
-
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -10,14 +9,27 @@ class App extends React.Component {
 
   constructor() {
     super();
-
     this.state = { toDos: [], task: "", searchFilter: "" };
+
+/*           todos: [
+        {
+          task: 'Organize Garage',
+          id: 1528817077286,
+          completed: false
+        },
+        {
+          task: 'Bake Cookies',
+          id: 1528817084358,
+          completed: false
+        }
+      ],
+      //todo: ' */
   }
 
   componentDidMount() {
     const newState = JSON.parse(window.localStorage.getItem("state"));
     this.setState(newState);
-    console.log(window.localStorage);
+    // console.log(window.localStorage);
   }
 
   submitTaskHandler = e => {
@@ -31,8 +43,8 @@ class App extends React.Component {
         searchFilter: ""
       })
     );
-    console.log(newTask);
-    console.log(this.state);
+   /*  console.log(newTask);
+    console.log(this.state); */
   };
 
   inputChangeHandler = e => {
